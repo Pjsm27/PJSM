@@ -23,9 +23,9 @@
         nav {
             display: flex;
             justify-content: space-around;
-            overflow-x: auto;
             background-color: #2a9d8f;
             padding: 10px 0;
+            overflow-x: auto;
             white-space: nowrap;
         }
         nav a {
@@ -96,6 +96,27 @@
             padding: 20px;
             border-radius: 8px;
         }
+        /* Responsivo para móviles */
+        @media (max-width: 600px) {
+            header {
+                padding: 15px;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .section {
+                padding: 15px;
+                margin: 10px;
+            }
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,6 +153,12 @@
         <a href="#nueva-publicacion-1" class="cta-button">Leer más sobre mis novedades</a>
     </section>
 
+    <!-- Sección Relatos Cortos -->
+    <section id="relatos-cortos" class="section">
+        <h2>Relatos Cortos</h2>
+        <p>Aquí podrás encontrar algunos de mis relatos cortos favoritos. Próximamente iré subiendo nuevos escritos.</p>
+    </section>
+
     <!-- Sección Poesía -->
     <section id="poesia" class="section">
         <h2>Poesía</h2>
@@ -142,27 +169,8 @@
         un latido hueco en la cueva de la mente,
         gira en espirales, un torbellino invisible
         que cose el aire con hilos de niebla.
-
-        El pánico se viste de humo y sombras,
-        con manos heladas sobre el pecho,
-        es un viento que no cesa y arrastra
-        piedras invisibles al borde de un abismo.
-
-        El insomnio es un vigía incansable,
-        ojos que nunca pestañean, fija la mirada
-        en el rincón de los pensamientos
-        donde el tiempo es solo un susurro.
-
-        Mi mente es un bosque de caminos sin mapa,
-        cada rama se enreda en sí misma,
-        como si el silencio fuera laberinto y eco,
-        como si las sombras fueran palabras sin voz.
-
-        Y en esa maraña de días y noches rotas,
-        mi diagnóstico es un nombre, una palabra sin cara,
-        como un eco recién hallado en la memoria,
-        que es ahora brújula y ruta hacia lo incierto.
-
+        
+        <!-- Más poesía aquí -->
         </pre>
     </section>
 
@@ -179,14 +187,14 @@
     <section id="redes" class="section">
         <h2>Sígueme en redes sociales</h2>
         <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
-        <a href="https://www.facebook.com/" class="cta-button">Facebook</a>
-        <a href="https://www.twitter.com/" class="cta-button">Twitter</a>
-        <a href="https://www.instagram.com/" class="cta-button">Instagram</a>
+        <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
     </section>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 Mis Escritos. Todos los derechos reservados.</p>
+        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
         <p>Si deseas apoyarme, puedes donar:</p>
         <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
     </footer>
