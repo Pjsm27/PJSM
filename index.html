@@ -10,13 +10,13 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #f2f2f2;
+            background-color: #f5e0b5; /* Fondo general */
             margin: 0;
             padding: 0;
         }
-        header {
-            background-color: #3aafa9;
-            color: white;
+        header, footer {
+            background-color: #e2f0cb; /* Fondo para header y footer */
+            color: #333;
             text-align: center;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,13 +24,13 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #2b7a78;
+            background-color: #e2f0cb; /* Fondo para el menú */
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
         }
         nav a {
-            color: white;
+            color: #333;
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
@@ -39,7 +39,7 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #1f5c5d;
+            background-color: #f5e0b5; /* Color de hover para links del menú */
         }
         .section {
             padding: 20px;
@@ -47,53 +47,29 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            background-color: #fff; /* Fondo de cada sección */
             overflow: hidden;
             word-wrap: break-word;
         }
-        #sobre-mi {
-            background-color: #ffddc1;
-        }
-        #novedades {
-            background-color: #c6f6d5;
-        }
-        #relatos-cortos {
-            background-color: #bee3f8;
-        }
         #poesia {
-            background-color: #f5e2d8;
             padding: 20px;
+            background-color: #f5e0b5;
+            border: 1px solid #e2f0cb;
+            border-radius: 8px;
             font-style: italic;
             text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        #comentarios {
-            background-color: #e6fffa;
-        }
-        #redes {
-            background-color: #fed7e2;
         }
         .section h2 {
             font-family: 'Lora', serif;
             margin-top: 0;
-            color: #2a9d8f;
-        }
-        footer {
-            background-color: #3aafa9;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            color: #333;
         }
         .cta-button {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
-            background-color: #e76f51;
-            color: white;
+            background-color: #e2f0cb;
+            color: #333;
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -101,7 +77,7 @@
             transition: background-color 0.3s;
         }
         .cta-button:hover {
-            background-color: #d05343;
+            background-color: #f5e0b5;
         }
         .comments {
             margin-top: 20px;
@@ -193,7 +169,23 @@
             En la quietud, la ansiedad es un reloj sin manecillas,<br>
             un latido hueco en la cueva de la mente,<br>
             gira en espirales, un torbellino invisible<br>
-            que cose el aire con hilos de niebla.
+            que cose el aire con hilos de niebla.<br><br>
+            El pánico se viste de humo y sombras,<br>
+            con manos heladas sobre el pecho,<br>
+            es un viento que no cesa y arrastra<br>
+            piedras invisibles al borde de un abismo.<br><br>
+            El insomnio es un vigía incansable,<br>
+            ojos que nunca pestañean, fija la mirada<br>
+            en el rincón de los pensamientos<br>
+            donde el tiempo es solo un susurro.<br><br>
+            Mi mente es un bosque de caminos sin mapa,<br>
+            cada rama se enreda en sí misma,<br>
+            como si el silencio fuera laberinto y eco,<br>
+            como si las sombras fueran palabras sin voz.<br><br>
+            Y en esa maraña de días y noches rotas,<br>
+            mi diagnóstico es un nombre, una palabra sin cara,<br>
+            como un eco recién hallado en la memoria,<br>
+            que es ahora brújula y ruta hacia lo incierto.
         </div>
     </section>
 
@@ -216,11 +208,4 @@
     </section>
 
     <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
-        <p>Si deseas apoyarme, puedes donar:</p>
-        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
-    </footer>
-
-</body>
-</html>
+    <footer
