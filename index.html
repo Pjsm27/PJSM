@@ -10,12 +10,12 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #f2f2f2; /* Color de fondo más claro */
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #3aafa9; /* Color más vibrante */
+            background-color: #3aafa9;
             color: white;
             text-align: center;
             padding: 20px;
@@ -24,7 +24,7 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #2b7a78; /* Color más oscuro */
+            background-color: #2b7a78;
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
@@ -36,10 +36,10 @@
             padding: 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
-            font-family: 'Raleway', sans-serif; /* Tipografía diferente */
+            font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #1f5c5d; /* Color al pasar el ratón más oscuro */
+            background-color: #1f5c5d;
         }
         .section {
             padding: 20px;
@@ -47,6 +47,7 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
             overflow: hidden;
             word-wrap: break-word;
         }
@@ -60,7 +61,7 @@
             background-color: #bee3f8;
         }
         #poesia {
-            background-color: #f5e2d8; /* Color más suave para poesía */
+            background-color: #f5e2d8;
         }
         #comentarios {
             background-color: #e6fffa;
@@ -69,12 +70,12 @@
             background-color: #fed7e2;
         }
         .section h2 {
-            font-family: 'Lora', serif; /* Nueva tipografía para títulos */
+            font-family: 'Lora', serif;
             margin-top: 0;
-            color: #2a9d8f; /* Color de texto diferente para títulos */
+            color: #2a9d8f;
         }
         footer {
-            background-color: #3aafa9; /* Color de pie de página vibrante */
+            background-color: #3aafa9;
             color: white;
             text-align: center;
             padding: 10px;
@@ -102,6 +103,12 @@
             padding: 20px;
             border-radius: 8px;
         }
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 10px;
+        }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
             header {
@@ -121,6 +128,10 @@
             .cta-button {
                 width: 100%;
                 text-align: center;
+            }
+            pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
             }
         }
     </style>
@@ -181,7 +192,7 @@
     <section id="comentarios" class="section comments">
         <h2>Comentarios</h2>
         <p>Déjame tu opinión sobre mis escritos:</p>
-        <textarea placeholder="Escribe aquí tu comentario..." rows="4" style="width: 100%;"></textarea>
+        <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
         <br>
         <button class="cta-button">Enviar</button>
     </section>
