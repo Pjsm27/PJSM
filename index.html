@@ -109,6 +109,11 @@
             border-radius: 5px;
             padding: 10px;
         }
+        /* Ajustes de poema */
+        pre {
+            white-space: pre-wrap; /* Permite saltos de línea */
+            word-wrap: break-word; /* Ajusta el texto al contenedor */
+        }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
             header {
@@ -124,14 +129,11 @@
             .section {
                 padding: 15px;
                 margin: 10px;
+                box-sizing: border-box;
             }
             .cta-button {
                 width: 100%;
                 text-align: center;
-            }
-            pre {
-                white-space: pre-wrap;
-                word-wrap: break-word;
             }
         }
     </style>
@@ -180,7 +182,6 @@
     <section id="poesia" class="section">
         <h2>Poesía</h2>
         <pre>
-        <!-- Sombras y Silencios -->
         En la quietud, la ansiedad es un reloj sin manecillas,
         un latido hueco en la cueva de la mente,
         gira en espirales, un torbellino invisible
