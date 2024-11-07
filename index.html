@@ -58,6 +58,21 @@
             border-radius: 8px;
             font-style: italic;
             text-align: center;
+            margin: 0 auto;
+            width: 80%; /* Ajusta el ancho de la sección */
+        }
+        .poem {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0 auto;
+            padding: 10px;
+            font-style: italic;
+            line-height: 1.6; /* Ajusta el espacio entre líneas */
+            text-align: left; /* Asegura que el poema esté alineado a la izquierda dentro de la caja */
+            max-width: 900px; /* Limita el ancho máximo para evitar que el texto se extienda demasiado */
+        }
+        .poem br {
+            margin-bottom: 0; /* Elimina el margen adicional de los saltos de línea */
         }
         .section h2 {
             font-family: 'Lora', serif;
@@ -89,18 +104,6 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 10px;
-        }
-        /* Ajustes de poema */
-        .poem {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            margin: 0 auto;
-            padding: 10px;
-            font-style: italic;
-            line-height: 1.4; /* Ajusta el espacio entre líneas */
-        }
-        .poem br {
-            margin-bottom: 0; /* Elimina el margen adicional de los saltos de línea */
         }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
@@ -135,13 +138,14 @@
 
     <!-- Navegación -->
     <nav>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#novedades">Novedades</a>
-        <a href="#relatos-cortos">Relatos Cortos</a>
-        <a href="#poesia">Poesía</a>
-        <a href="#libros">Libros</a>
-        <a href="#sugerencias">Sugerencias de Películas y Libros</a>
-        <a href="#redes">Redes</a>
+        <a href="#sobre-mi" aria-label="Ir a la sección sobre mí">Sobre mí</a>
+        <a href="#novedades" aria-label="Ir a la sección novedades">Novedades</a>
+        <a href="#relatos-cortos" aria-label="Ir a la sección relatos cortos">Relatos Cortos</a>
+        <a href="#poesia" aria-label="Ir a la sección poesía">Poesía</a>
+        <a href="#libros" aria-label="Ir a la sección libros">Libros</a>
+        <a href="#sugerencias" aria-label="Ir a la sección sugerencias">Sugerencias de Películas y Libros</a>
+        <a href="#donaciones" aria-label="Ir a la sección de donaciones">Donaciones</a> <!-- Enlace a la nueva sección Donaciones -->
+        <a href="#redes" aria-label="Ir a la sección redes sociales">Redes</a>
     </nav>
 
     <!-- Sección Sobre mí -->
@@ -170,56 +174,61 @@
     <section id="poesia" class="section">
         <h2>Poesía</h2>
         <div class="poem">
-            En la quietud, la ansiedad es un reloj sin manecillas,
-            un latido hueco en la cueva de la mente,
-            gira en espirales, un torbellino invisible
-            que cose el aire con hilos de niebla.
-
-            El pánico se viste de humo y sombras,
-            con manos heladas sobre el pecho,
-            es un viento que no cesa y arrastra
-            piedras invisibles al borde de un abismo.
-
-            El insomnio es un vigía incansable,
-            ojos que nunca pestañean, fija la mirada
-            en el rincón de los pensamientos
-            donde el tiempo es solo un susurro.
-
-            Mi mente es un bosque de caminos sin mapa,
-            cada rama se enreda en sí misma,
-            como si el silencio fuera laberinto y eco,
-            como si las sombras fueran palabras sin voz.
-
-            Y en esa maraña de días y noches rotas,
-            mi diagnóstico es un nombre, una palabra sin cara,
-            como un eco recién hallado en la memoria,
+            En la quietud, la ansiedad es un reloj sin manecillas,<br>
+            un latido hueco en la cueva de la mente,<br>
+            gira en espirales, un torbellino invisible<br>
+            que cose el aire con hilos de niebla.<br><br>
+            El pánico se viste de humo y sombras,<br>
+            con manos heladas sobre el pecho,<br>
+            es un viento que no cesa y arrastra<br>
+            piedras invisibles al borde de un abismo.<br><br>
+            El insomnio es un vigía incansable,<br>
+            ojos que nunca pestañean, fija la mirada<br>
+            en el rincón de los pensamientos<br>
+            donde el tiempo es solo un susurro.<br><br>
+            Mi mente es un bosque de caminos sin mapa,<br>
+            cada rama se enreda en sí misma,<br>
+            como si el silencio fuera laberinto y eco,<br>
+            como si las sombras fueran palabras sin voz.<br><br>
+            Y en esa maraña de días y noches rotas,<br>
+            mi diagnóstico es un nombre, una palabra sin cara,<br>
+            como un eco recién hallado en la memoria,<br>
             que es ahora brújula y ruta hacia lo incierto.
         </div>
     </section>
 
-    <!-- Sección de Comentarios -->
-    <section id="comentarios" class="section comments">
-        <h2>Comentarios</h2>
-        <p>Déjame tu opinión sobre mis escritos:</p>
-        <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
-        <br>
-        <button class="cta-button">Enviar</button>
+    <!-- Sección Libros -->
+    <section id="libros" class="section">
+        <h2>Libros</h2>
+        <p>Aquí compartiré mis libros, algunos ya publicados y otros en proceso. Próximamente habrá más información.</p>
     </section>
 
-    <!-- Sección de Redes Sociales -->
-    <section id="redes" class="section">
-        <h2>Sígueme en redes sociales</h2>
-        <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
-        <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
-        <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
-        <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
+    <!-- Sección Sugerencias de Películas y Libros -->
+    <section id="sugerencias" class="section">
+        <h2>Sugerencias de Películas y Libros</h2>
+        <p>En esta sección recomiendo películas y libros que he disfrutado. ¡Pronto más sugerencias!</p>
+    </section>
+
+    <!-- Sección Donaciones -->
+    <section id="donaciones" class="section">
+        <h2>Donaciones</h2>
+        <p>Si te ha gustado mi trabajo y quieres apoyarme, puedes hacer una donación. ¡Tu ayuda es muy apreciada!</p>
+        <a href="mailto:pjsm527@gmail.com" class="cta-button">Contáctame para realizar una donación</a>
+    </section>
+
+    <!-- Sección Comentarios -->
+    <section id="comentarios" class="comments">
+        <h2>Comentarios</h2>
+        <form action="tu_script_de_backend.php" method="POST">
+            <textarea placeholder="Escribe aquí tu comentario..." rows="4" name="comentario"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
-        <p>Si deseas apoyarme, puedes donar:</p>
-        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
+        <p>&copy; 2024 PJSM - Pere Joan Sirvent Mestre</p>
+        <a href="mailto:pjsm527@gmail.com">Contáctame</a>
     </footer>
 
 </body>
