@@ -27,7 +27,6 @@
             background-color: #e2f0cb;
             padding: 10px 0;
             overflow-x: auto;
-            white-space: nowrap;
         }
         nav a {
             color: #333;
@@ -39,35 +38,28 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #f5e0b5;
+            background-color: #d1c1a4; /* Color de hover */
         }
         .section {
-            display: none;
-            padding: 20px;
+            padding: 30px;
             margin: 20px auto;
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             overflow: hidden;
-            word-wrap: break-word;
-        }
-        #poesia {
-            padding: 20px;
-            background-color: #f5e0b5;
-            border: 1px solid #e2f0cb;
-            border-radius: 8px;
-            font-style: italic;
-            text-align: center;
         }
         .section h2 {
             font-family: 'Lora', serif;
-            margin-top: 0;
-            color: #333;
+            color: #0047AB;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e2f0cb;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
         .cta-button {
             display: inline-block;
-            margin: 10px 0;
+            margin: 10px 5px;
             padding: 10px 20px;
             background-color: #e2f0cb;
             color: #333;
@@ -75,10 +67,11 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .cta-button:hover {
-            background-color: #f5e0b5;
+            background-color: #d1c1a4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .comments {
             margin-top: 20px;
@@ -90,35 +83,47 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 10px;
-        }
-        .poem {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            margin: 0 auto;
-            padding: 10px;
-            font-style: italic;
-            display: none;
+            border: 1px solid #e2f0cb;
         }
         .poem-title {
             cursor: pointer;
             font-weight: bold;
             color: #0047AB;
         }
+        .poem {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-style: italic;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5e0b5;
+            border: 1px solid #e2f0cb;
+            border-radius: 8px;
+        }
+        #redes a {
+            display: inline-block;
+            margin: 5px;
+        }
+        footer p {
+            font-size: 0.9em;
+        }
+        footer a {
+            margin-top: 10px;
+            display: inline-block;
+            color: #333;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #0047AB;
+        }
         @media (max-width: 600px) {
-            header {
-                padding: 15px;
-            }
             nav {
                 flex-direction: column;
                 align-items: center;
             }
-            nav a {
-                margin: 5px 0;
-            }
             .section {
                 padding: 15px;
                 margin: 10px;
-                box-sizing: border-box;
             }
             .cta-button {
                 width: 100%;
@@ -126,118 +131,40 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll("nav a").forEach(function (link) {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    document.querySelectorAll(".section").forEach(function (section) {
-                        section.style.display = "none";
-                    });
-                    const targetId = link.getAttribute("href").substring(1);
-                    document.getElementById(targetId).style.display = "block";
-                });
-            });
-            document.querySelector(".poem-title").addEventListener("click", function () {
-                const poem = document.querySelector(".poem");
-                poem.style.display = poem.style.display === "none" ? "block" : "none";
-            });
-        });
-    </script>
 </head>
 <body>
 
-    <!-- Encabezado -->
     <header>
         <h1>PJSM</h1>
     </header>
 
-    <!-- Navegación -->
     <nav>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#novedades">Novedades</a>
         <a href="#relatos-cortos">Relatos Cortos</a>
         <a href="#poesia">Poesía</a>
         <a href="#libros">Libros</a>
-        <a href="#sugerencias">Sugerencias de Películas y Libros</a>
+        <a href="#sugerencias">Sugerencias</a>
         <a href="#redes">Redes</a>
     </nav>
 
-    <!-- Sección Sobre mí -->
     <section id="sobre-mi" class="section">
         <h2>Sobre mí</h2>
-        <p>Hola, bienvenidos a esta página web, me llamo Pere Joan Sirvent Mestre. Nací en Brasil en 1994. Me gusta mucho escribir libros sobre ciencia ficción, tengo ganas de que me acompañéis en este viaje, donde no solo nos adentraremos en el mundo de los libros, sino también en el gran universo de las películas y series.</p>
+        <p>Bienvenidos a mi página web, soy Pere Joan Sirvent Mestre. Nací en Brasil en 1994 y me encanta escribir ciencia ficción...</p>
     </section>
 
-    <!-- Sección Novedades -->
-    <section id="novedades" class="section">
-        <h2>Novedades</h2>
-        <ul>
-            <li><a href="#nueva-publicacion-1">Publicación 1 - Fecha</a></li>
-            <li><a href="#nueva-publicacion-2">Publicación 2 - Fecha</a></li>
-        </ul>
-        <a href="#nueva-publicacion-1" class="cta-button">Leer más sobre mis novedades</a>
-    </section>
-
-    <!-- Sección Relatos Cortos -->
-    <section id="relatos-cortos" class="section">
-        <h2>Relatos Cortos</h2>
-        <p>Aquí podrás encontrar algunos de mis relatos cortos favoritos. Próximamente iré subiendo nuevos escritos.</p>
-    </section>
-
-    <!-- Sección Poesía -->
-    <section id="poesia" class="section">
-        <h2>Poesía</h2>
-        <div class="poem-title">Sombras y Silencios</div>
-        <div class="poem">
-            En la quietud, la ansiedad es un reloj sin manecillas,<br>
-            un latido hueco en la cueva de la mente,<br>
-            gira en espirales, un torbellino invisible<br>
-            que cose el aire con hilos de niebla.<br><br>
-            El pánico se viste de humo y sombras,<br>
-            con manos heladas sobre el pecho,<br>
-            es un viento que no cesa y arrastra<br>
-            piedras invisibles al borde de un abismo.<br><br>
-            El insomnio es un vigía incansable,<br>
-            ojos que nunca pestañean, fija la mirada<br>
-            en el rincón de los pensamientos<br>
-            donde el tiempo es solo un susurro.<br><br>
-            Mi mente es un bosque de caminos sin mapa,<br>
-            cada rama se enreda en sí misma,<br>
-            como si el silencio fuera laberinto y eco,<br>
-            como si las sombras fueran palabras sin voz.<br><br>
-            Y en esa maraña de días y noches rotas,<br>
-            mi diagnóstico es un nombre, una palabra sin cara,<br>
-            como un eco recién hallado en la memoria,<br>
-            que es ahora brújula y ruta hacia lo incierto.
-        </div>
-    </section>
-
-    <!-- Sección de Comentarios -->
-    <section id="comentarios" class="section comments">
-        <h2>Comentarios</h2>
-        <p>Déjame tu opinión sobre mis escritos:</p>
-        <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
-        <br>
-        <button class="cta-button">Enviar</button>
-    </section>
-
-    <!-- Sección de Redes Sociales -->
     <section id="redes" class="section">
         <h2>Sígueme en redes sociales</h2>
-        <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
-        <a href="https
-            <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
+        <p>Puedes seguirme en mis redes sociales:</p>
+        <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
         <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
         <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
     </section>
 
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
-        <p>Si deseas apoyarme, puedes donar:</p>
         <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
     </footer>
+
 </body>
 </html>
-        
