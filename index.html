@@ -13,6 +13,7 @@
             background-color: #f5e0b5;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header, footer {
             background-color: #e2f0cb;
@@ -23,10 +24,11 @@
         }
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             background-color: #e2f0cb;
             padding: 10px 0;
             overflow-x: auto;
+            white-space: nowrap;
         }
         nav a {
             color: #333;
@@ -38,28 +40,25 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #d1c1a4; /* Color de hover */
+            background-color: #f5e0b5;
         }
         .section {
-            padding: 30px;
+            padding: 20px;
             margin: 20px auto;
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             overflow: hidden;
+            word-wrap: break-word;
         }
         .section h2 {
             font-family: 'Lora', serif;
-            color: #0047AB;
-            font-size: 1.8em;
-            border-bottom: 2px solid #e2f0cb;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            color: #333;
         }
         .cta-button {
             display: inline-block;
-            margin: 10px 5px;
+            margin: 10px 0;
             padding: 10px 20px;
             background-color: #e2f0cb;
             color: #333;
@@ -67,11 +66,11 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s;
+            cursor: pointer;
         }
         .cta-button:hover {
-            background-color: #d1c1a4;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f5e0b5;
         }
         .comments {
             margin-top: 20px;
@@ -83,39 +82,17 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 10px;
-            border: 1px solid #e2f0cb;
+            resize: vertical;
         }
-        .poem-title {
-            cursor: pointer;
-            font-weight: bold;
-            color: #0047AB;
-        }
+        /* Ajustes de poema */
         .poem {
             white-space: pre-wrap;
             word-wrap: break-word;
-            font-style: italic;
-            margin: 20px 0;
+            margin: 0 auto;
             padding: 10px;
-            background-color: #f5e0b5;
-            border: 1px solid #e2f0cb;
-            border-radius: 8px;
+            font-style: italic;
         }
-        #redes a {
-            display: inline-block;
-            margin: 5px;
-        }
-        footer p {
-            font-size: 0.9em;
-        }
-        footer a {
-            margin-top: 10px;
-            display: inline-block;
-            color: #333;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: #0047AB;
-        }
+        /* Responsivo para móviles */
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
@@ -134,10 +111,12 @@
 </head>
 <body>
 
+    <!-- Encabezado -->
     <header>
         <h1>PJSM</h1>
     </header>
 
+    <!-- Navegación -->
     <nav>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#novedades">Novedades</a>
@@ -148,21 +127,57 @@
         <a href="#redes">Redes</a>
     </nav>
 
+    <!-- Sección Sobre mí -->
     <section id="sobre-mi" class="section">
         <h2>Sobre mí</h2>
-        <p>Bienvenidos a mi página web, soy Pere Joan Sirvent Mestre. Nací en Brasil en 1994 y me encanta escribir ciencia ficción...</p>
+        <p>Hola, bienvenidos a esta página web, me llamo Pere Joan Sirvent Mestre...</p>
     </section>
 
+    <!-- Sección Novedades -->
+    <section id="novedades" class="section">
+        <h2>Novedades</h2>
+        <ul>
+            <li><a href="#nueva-publicacion-1">Publicación 1 - Fecha</a></li>
+            <li><a href="#nueva-publicacion-2">Publicación 2 - Fecha</a></li>
+        </ul>
+    </section>
+
+    <!-- Sección Relatos Cortos -->
+    <section id="relatos-cortos" class="section">
+        <h2>Relatos Cortos</h2>
+        <p>Aquí podrás encontrar algunos de mis relatos cortos favoritos...</p>
+    </section>
+
+    <!-- Sección Poesía -->
+    <section id="poesia" class="section">
+        <h2>Poesía</h2>
+        <div class="poem">
+            <!-- Poema aquí -->
+        </div>
+    </section>
+
+    <!-- Sección de Comentarios -->
+    <section id="comentarios" class="section comments">
+        <h2>Comentarios</h2>
+        <p>Déjame tu opinión sobre mis escritos:</p>
+        <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
+        <br>
+        <button class="cta-button">Enviar</button>
+    </section>
+
+    <!-- Sección de Redes Sociales -->
     <section id="redes" class="section">
         <h2>Sígueme en redes sociales</h2>
-        <p>Puedes seguirme en mis redes sociales:</p>
+        <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
         <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
         <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
         <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
     </section>
 
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
+        <p>Si deseas apoyarme, puedes donar:</p>
         <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
     </footer>
 
