@@ -62,6 +62,11 @@
         }
         #poesia {
             background-color: #f5e2d8;
+            padding: 20px;
+            font-style: italic;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
         #comentarios {
             background-color: #e6fffa;
@@ -110,9 +115,12 @@
             padding: 10px;
         }
         /* Ajustes de poema */
-        pre {
+        .poem {
             white-space: pre-wrap; /* Permite saltos de línea */
             word-wrap: break-word; /* Ajusta el texto al contenedor */
+            margin: 0 auto;
+            padding: 10px;
+            font-style: italic;
         }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
@@ -181,12 +189,12 @@
     <!-- Sección Poesía -->
     <section id="poesia" class="section">
         <h2>Poesía</h2>
-        <pre>
-        En la quietud, la ansiedad es un reloj sin manecillas,
-        un latido hueco en la cueva de la mente,
-        gira en espirales, un torbellino invisible
-        que cose el aire con hilos de niebla.
-        </pre>
+        <div class="poem">
+            En la quietud, la ansiedad es un reloj sin manecillas,<br>
+            un latido hueco en la cueva de la mente,<br>
+            gira en espirales, un torbellino invisible<br>
+            que cose el aire con hilos de niebla.
+        </div>
     </section>
 
     <!-- Sección de Comentarios -->
