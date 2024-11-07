@@ -42,6 +42,7 @@
             background-color: #87CEFA; /* Color de hover para links del menú */
         }
         .section {
+            display: none; /* Ocultar secciones inicialmente */
             padding: 20px;
             margin: 20px auto;
             max-width: 800px;
@@ -121,6 +122,20 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("nav a").forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    document.querySelectorAll(".section").forEach(function (section) {
+                        section.style.display = "none";
+                    });
+                    const targetId = link.getAttribute("href").substring(1);
+                    document.getElementById(targetId).style.display = "block";
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -203,16 +218,4 @@
         <h2>Sígueme en redes sociales</h2>
         <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
         <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
-        <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
-        <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
-    </section>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
-        <p>Si deseas apoyarme, puedes donar:</p>
-        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
-    </footer>
-
-</body>
-</html>
+        <[_{{{CITATION{{{_1{](https://github.com/la9una/web/tree/ba1073ae044ebb7b538a3b13f0f9598f7c410bb6/docs%2Fbootstrap%2Falignci.md)[_{{{CITATION{{{_2{](https://github.com/CLONATORE/markdowns/tree/82cfb03683ceb807a7091de48045e6a7485acd72/webpack.md)
