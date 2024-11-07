@@ -1,3 +1,6 @@
+Perfecto, voy a ajustar el código completo manteniendo el pie de página exactamente como lo prefieres y asegurándome de que la sección "Donaciones" en el contenido tenga el mismo enlace y diseño. Aquí tienes el código actualizado:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,12 +13,12 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #f5e0b5; /* Fondo general */
+            background-color: #f5e0b5;
             margin: 0;
             padding: 0;
         }
         header, footer {
-            background-color: #e2f0cb; /* Fondo para header y footer */
+            background-color: #e2f0cb;
             color: #333;
             text-align: center;
             padding: 20px;
@@ -24,7 +27,7 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #e2f0cb; /* Fondo para el menú */
+            background-color: #e2f0cb;
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
@@ -39,7 +42,7 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #f5e0b5; /* Color de hover para links del menú */
+            background-color: #f5e0b5;
         }
         .section {
             padding: 20px;
@@ -47,9 +50,7 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff; /* Fondo de cada sección */
-            overflow: hidden;
-            word-wrap: break-word;
+            background-color: #fff;
         }
         #poesia {
             padding: 20px;
@@ -59,20 +60,16 @@
             font-style: italic;
             text-align: center;
             margin: 0 auto;
-            width: 80%; /* Ajusta el ancho de la sección */
+            width: 80%;
         }
         .poem {
             white-space: pre-wrap;
-            word-wrap: break-word;
             margin: 0 auto;
             padding: 10px;
             font-style: italic;
-            line-height: 1.6; /* Ajusta el espacio entre líneas */
-            text-align: left; /* Asegura que el poema esté alineado a la izquierda dentro de la caja */
-            max-width: 900px; /* Limita el ancho máximo para evitar que el texto se extienda demasiado */
-        }
-        .poem br {
-            margin-bottom: 0; /* Elimina el margen adicional de los saltos de línea */
+            line-height: 1.6;
+            text-align: left;
+            max-width: 900px;
         }
         .section h2 {
             font-family: 'Lora', serif;
@@ -138,14 +135,14 @@
 
     <!-- Navegación -->
     <nav>
-        <a href="#sobre-mi" aria-label="Ir a la sección sobre mí">Sobre mí</a>
-        <a href="#novedades" aria-label="Ir a la sección novedades">Novedades</a>
-        <a href="#relatos-cortos" aria-label="Ir a la sección relatos cortos">Relatos Cortos</a>
-        <a href="#poesia" aria-label="Ir a la sección poesía">Poesía</a>
-        <a href="#libros" aria-label="Ir a la sección libros">Libros</a>
-        <a href="#sugerencias" aria-label="Ir a la sección sugerencias">Sugerencias de Películas y Libros</a>
-        <a href="#donaciones" aria-label="Ir a la sección de donaciones">Donaciones</a> <!-- Enlace a la nueva sección Donaciones -->
-        <a href="#redes" aria-label="Ir a la sección redes sociales">Redes</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#novedades">Novedades</a>
+        <a href="#relatos-cortos">Relatos Cortos</a>
+        <a href="#poesia">Poesía</a>
+        <a href="#libros">Libros</a>
+        <a href="#sugerencias">Sugerencias de Películas y Libros</a>
+        <a href="#redes">Redes</a>
+        <a href="#donaciones">Donaciones</a>
     </nav>
 
     <!-- Sección Sobre mí -->
@@ -200,35 +197,46 @@
     <!-- Sección Libros -->
     <section id="libros" class="section">
         <h2>Libros</h2>
-        <p>Aquí compartiré mis libros, algunos ya publicados y otros en proceso. Próximamente habrá más información.</p>
+        <p>Aquí puedes ver mis libros y publicaciones disponibles. Espero que disfrutes de estas lecturas.</p>
     </section>
 
     <!-- Sección Sugerencias de Películas y Libros -->
     <section id="sugerencias" class="section">
         <h2>Sugerencias de Películas y Libros</h2>
-        <p>En esta sección recomiendo películas y libros que he disfrutado. ¡Pronto más sugerencias!</p>
+        <p>Aquí encontrarás recomendaciones de películas y libros que considero valen la pena. ¡Espero que también los disfrutes!</p>
     </section>
 
     <!-- Sección Donaciones -->
     <section id="donaciones" class="section">
         <h2>Donaciones</h2>
-        <p>Si te ha gustado mi trabajo y quieres apoyarme, puedes hacer una donación. ¡Tu ayuda es muy apreciada!</p>
-        <a href="mailto:pjsm527@gmail.com" class="cta-button">Contáctame para realizar una donación</a>
+        <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
+        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
     </section>
 
-    <!-- Sección Comentarios -->
-    <section id="comentarios" class="comments">
+    <!-- Sección de Comentarios -->
+    <section id="comentarios" class="section comments">
         <h2>Comentarios</h2>
-        <form action="tu_script_de_backend.php" method="POST">
-            <textarea placeholder="Escribe aquí tu comentario..." rows="4" name="comentario"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+        <p>Déjame tu opinión sobre mis escritos:</p>
+        <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
+        <button>Enviar</button>
+    </section>
+
+    <!-- Sección de Redes Sociales -->
+    <section id="redes" class="section">
+        <h2>Redes Sociales</h2>
+        <p>Conéctate conmigo en mis redes sociales para seguir todas las novedades y más contenido exclusivo.</p>
+        <ul>
+            <li><a href="#facebook">Facebook</a></li>
+            <li><a href="#twitter">Twitter</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+        </ul>
     </section>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; 2024 PJSM - Pere Joan Sirvent Mestre</p>
-        <a href="mailto:pjsm527@gmail.com">Contáctame</a>
+        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
+        <p>Si deseas apoyarme, puedes donar:</p>
+        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
     </footer>
 
 </body>
