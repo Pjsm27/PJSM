@@ -10,13 +10,13 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #ffffff; /* Fondo general */
+            background-color: #f5e0b5; /* Fondo general */
             margin: 0;
             padding: 0;
         }
         header, footer {
-            background-color: #0047AB; /* Fondo para header y footer */
-            color: #ffffff;
+            background-color: #e2f0cb; /* Fondo para header y footer */
+            color: #333;
             text-align: center;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,13 +24,13 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #0047AB; /* Fondo para el menú */
+            background-color: #e2f0cb; /* Fondo para el menú */
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
         }
         nav a {
-            color: #ffffff;
+            color: #333;
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
@@ -39,7 +39,7 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #87CEFA; /* Color de hover para links del menú */
+            background-color: #f5e0b5; /* Color de hover para links del menú */
         }
         .section {
             display: none; /* Ocultar secciones inicialmente */
@@ -48,14 +48,14 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9; /* Fondo de cada sección */
+            background-color: #fff; /* Fondo de cada sección */
             overflow: hidden;
             word-wrap: break-word;
         }
         #poesia {
             padding: 20px;
-            background-color: #87CEFA;
-            border: 1px solid #0047AB;
+            background-color: #f5e0b5;
+            border: 1px solid #e2f0cb;
             border-radius: 8px;
             font-style: italic;
             text-align: center;
@@ -63,14 +63,14 @@
         .section h2 {
             font-family: 'Lora', serif;
             margin-top: 0;
-            color: #0047AB;
+            color: #333;
         }
         .cta-button {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
-            background-color: #0047AB;
-            color: #ffffff;
+            background-color: #e2f0cb;
+            color: #333;
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -78,7 +78,7 @@
             transition: background-color 0.3s;
         }
         .cta-button:hover {
-            background-color: #87CEFA;
+            background-color: #f5e0b5;
         }
         .comments {
             margin-top: 20px;
@@ -98,6 +98,12 @@
             margin: 0 auto;
             padding: 10px;
             font-style: italic;
+            display: none; /* Ocultar el poema inicialmente */
+        }
+        .poem-title {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0047AB;
         }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
@@ -133,6 +139,10 @@
                     const targetId = link.getAttribute("href").substring(1);
                     document.getElementById(targetId).style.display = "block";
                 });
+            });
+            document.querySelector(".poem-title").addEventListener("click", function () {
+                const poem = document.querySelector(".poem");
+                poem.style.display = poem.style.display === "none" ? "block" : "none";
             });
         });
     </script>
@@ -180,6 +190,7 @@
     <!-- Sección Poesía -->
     <section id="poesia" class="section">
         <h2>Poesía</h2>
+        <div class="poem-title">Sombras y Silencios</div>
         <div class="poem">
             En la quietud, la ansiedad es un reloj sin manecillas,<br>
             un latido hueco en la cueva de la mente,<br>
@@ -213,9 +224,4 @@
         <button class="cta-button">Enviar</button>
     </section>
 
-    <!-- Sección de Redes Sociales -->
-    <section id="redes" class="section">
-        <h2>Sígueme en redes sociales</h2>
-        <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
-        <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
-        <[_{{{CITATION{{{_1{](https://github.com/la9una/web/tree/ba1073ae044ebb7b538a3b13f0f9598f7c410bb6/docs%2Fbootstrap%2Falignci.md)[_{{{CITATION{{{_2{](https://github.com/CLONATORE/markdowns/tree/82cfb03683ceb807a7091de48045e6a7485acd72/webpack.md)
+    <!-- Sección de[_{{{CITATION{{{_1{](https://github.com/la9una/web/tree/ba1073ae044ebb7b538a3b13f0f9598f7c410bb6/docs%2Fbootstrap%2Falignci.md)[_{{{CITATION{{{_2{](https://github.com/CLONATORE/markdowns/tree/82cfb03683ceb807a7091de48045e6a7485acd72/webpack.md)
