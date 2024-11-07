@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PJSM - Pere Joan Sirvent Mestre</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f5e0b5;
+            color: #4b2e19;
+            background-color: #f5f1e8; /* Fondo beige claro */
             margin: 0;
             padding: 0;
         }
         header, footer {
-            background-color: #e2f0cb;
-            color: #333;
+            background-color: #8b5e3b; /* Marrón oscuro */
+            color: #ffffff;
             text-align: center;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,61 +24,42 @@
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #e2f0cb;
+            background-color: #4b2e19; /* Marrón intenso */
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
         }
         nav a {
-            color: #333;
+            color: #f5f1e8; /* Beige claro */
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
-            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
         }
         nav a:hover {
-            background-color: #f5e0b5;
+            background-color: #8b5e3b; /* Color de hover marrón oscuro */
         }
         .section {
-            padding: 20px;
+            padding: 30px;
             margin: 20px auto;
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        #poesia {
-            padding: 20px;
-            background-color: #f5e0b5;
-            border: 1px solid #e2f0cb;
-            border-radius: 8px;
-            font-style: italic;
-            text-align: center;
-            margin: 0 auto;
-            width: 80%;
-        }
-        .poem {
-            white-space: pre-wrap;
-            margin: 0 auto;
-            padding: 10px;
-            font-style: italic;
-            line-height: 1.6;
-            text-align: left;
-            max-width: 900px;
+            background-color: #ffffff; /* Fondo blanco para las secciones */
         }
         .section h2 {
             font-family: 'Lora', serif;
             margin-top: 0;
-            color: #333;
+            color: #4b2e19;
         }
         .cta-button {
             display: inline-block;
             margin: 10px 0;
             padding: 10px 20px;
-            background-color: #e2f0cb;
-            color: #333;
+            background-color: #8b5e3b; /* Botón marrón oscuro */
+            color: #ffffff;
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -86,7 +67,7 @@
             transition: background-color 0.3s;
         }
         .cta-button:hover {
-            background-color: #f5e0b5;
+            background-color: #4b2e19;
         }
         .comments {
             margin-top: 20px;
@@ -98,7 +79,30 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 10px;
+            border: 1px solid #8b5e3b;
         }
+        
+        /* Estilos para la sección de Poesía */
+        #poesia {
+            background-color: #f5e0b5; /* Color de fondo suave */
+            border: 1px solid #8b5e3b; /* Color de borde marrón suave */
+            padding: 30px;
+            border-radius: 8px;
+            font-family: 'Lora', serif;
+            color: #4b2e19; /* Color de texto marrón oscuro */
+        }
+        .poem {
+            margin-top: 20px;
+        }
+        .poem .estrofa {
+            margin-bottom: 20px; /* Espacio entre estrofas */
+            line-height: 1.6; /* Espaciado de línea cómodo */
+            text-align: center; /* Alineación centrada */
+        }
+        .poem .estrofa::first-line {
+            font-weight: bold; /* Destaca la primera línea de cada estrofa */
+        }
+        
         /* Responsivo para móviles */
         @media (max-width: 600px) {
             header {
@@ -127,7 +131,7 @@
 
     <!-- Encabezado -->
     <header>
-        <h1>PJSM</h1>
+        <h1>PJSM - Pere Joan Sirvent Mestre</h1>
     </header>
 
     <!-- Navegación -->
@@ -139,7 +143,6 @@
         <a href="#libros">Libros</a>
         <a href="#sugerencias">Sugerencias de Películas y Libros</a>
         <a href="#redes">Redes</a>
-        <a href="#donaciones">Donaciones</a>
     </nav>
 
     <!-- Sección Sobre mí -->
@@ -168,74 +171,70 @@
     <section id="poesia" class="section">
         <h2>Poesía</h2>
         <div class="poem">
-            En la quietud, la ansiedad es un reloj sin manecillas,<br>
-            un latido hueco en la cueva de la mente,<br>
-            gira en espirales, un torbellino invisible<br>
-            que cose el aire con hilos de niebla.<br><br>
-            El pánico se viste de humo y sombras,<br>
-            con manos heladas sobre el pecho,<br>
-            es un viento que no cesa y arrastra<br>
-            piedras invisibles al borde de un abismo.<br><br>
-            El insomnio es un vigía incansable,<br>
-            ojos que nunca pestañean, fija la mirada<br>
-            en el rincón de los pensamientos<br>
-            donde el tiempo es solo un susurro.<br><br>
-            Mi mente es un bosque de caminos sin mapa,<br>
-            cada rama se enreda en sí misma,<br>
-            como si el silencio fuera laberinto y eco,<br>
-            como si las sombras fueran palabras sin voz.<br><br>
-            Y en esa maraña de días y noches rotas,<br>
-            mi diagnóstico es un nombre, una palabra sin cara,<br>
-            como un eco recién hallado en la memoria,<br>
-            que es ahora brújula y ruta hacia lo incierto.
+            <p class="estrofa">
+                En la quietud, la ansiedad es un reloj sin manecillas,<br>
+                un latido hueco en la cueva de la mente,<br>
+                gira en espirales, un torbellino invisible<br>
+                que cose el aire con hilos de niebla.
+            </p>
+            <p class="estrofa">
+                El pánico se viste de humo y sombras,<br>
+                con manos heladas sobre el pecho,<br>
+                es un viento que no cesa y arrastra<br>
+                piedras invisibles al borde de un abismo.
+            </p>
+            <p class="estrofa">
+                El insomnio es un vigía incansable,<br>
+                ojos que nunca pestañean, fija la mirada<br>
+                en el rincón de los pensamientos<br>
+                donde el tiempo es solo un susurro.
+            </p>
+            <p class="estrofa">
+                Mi mente es un bosque de caminos sin mapa,<br>
+                cada rama se enreda en sí misma,<br>
+                como si el silencio fuera laberinto y eco,<br>
+                como si las sombras fueran palabras sin voz.
+            </p>
+            <p class="estrofa">
+                Y en esa maraña de días y noches rotas,<br>
+                mi diagnóstico es un nombre, una palabra sin cara,<br>
+                como un eco recién hallado en la memoria,<br>
+                que es ahora brújula y ruta hacia lo incierto.
+            </p>
         </div>
     </section>
 
-    <!-- Sección Libros -->
-    <section id="libros" class="section">
-        <h2>Libros</h2>
-        <p>Aquí puedes ver mis libros y publicaciones disponibles. Espero que disfrutes de estas lecturas.</p>
-    </section>
-
-    <!-- Sección Sugerencias de Películas y Libros -->
-    <section id="sugerencias" class="section">
-        <h2>Sugerencias de Películas y Libros</h2>
-        <p>Aquí encontrarás recomendaciones de películas y libros que considero valen la pena. ¡Espero que también los disfrutes!</p>
-    </section>
-<!
-    -- Sección de Donaciones -->
-<section id="donaciones" class="section">
-    <h2>Donaciones</h2>
-    <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
-    <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="2QCSKPG24XSBE" />
-        <input type="image" src="https://pics.paypal.com/00/s/NzM2MWQwOGEtNmFkNC00MWMzLTk3ZmItODg4MjJhZTUwNzI0/file.JPG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
-        <img alt="" border="0" src="https://www.paypal.com/es_ES/i/scr/pixel.gif" width="1" height="1" />
-    </form>
-</section>
-
- <!-- Sección de Comentarios -->
+    <!-- Sección de Comentarios -->
     <section id="comentarios" class="section comments">
         <h2>Comentarios</h2>
         <p>Déjame tu opinión sobre mis escritos:</p>
         <textarea placeholder="Escribe aquí tu comentario..." rows="4"></textarea>
-        <button>Enviar</button>
+        <br>
+        <button class="cta-button">Enviar</button>
     </section>
 
     <!-- Sección de Redes Sociales -->
     <section id="redes" class="section">
-        <h2>Redes Sociales</h2>
-        <p>Conéctate conmigo en mis redes sociales para seguir todas las novedades y más contenido exclusivo.</p>
-        <ul>
-            <li><a href="#facebook">Facebook</a></li>
-            <li><a href="#twitter">Twitter</a></li>
-            <li><a href="#instagram">Instagram</a></li>
-        </ul>
+        <h2>Sígueme en redes sociales</h2>
+        <p>Puedes seguirme en mis redes sociales para estar al tanto de mis novedades:</p>
+        <a href="https://www.facebook.com/" class="cta-button" target="_blank">Facebook</a>
+        <a href="https://www.twitter.com/" class="cta-button" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/" class="cta-button" target="_blank">Instagram</a>
     </section>
 
-<!-- Pie de página -->
-<footer>
-    <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
-   </form>
-</footer>
+    <!-- Sección de Donaciones -->
+    <section id="donaciones" class="section">
+        <h2>Donaciones</h2>
+        <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
+        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="2QCSKPG24XSBE" />
+            <input type="image" src="https://pics.paypal.com/00/s/NzM2MWQwOGEtNmFkNC00MWMzLTk3ZmItODg4MjJhZTUwNzI0/file.JPG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+            <img alt="" border="0" src="https://www.paypal.com/es_ES/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 PJSM. Todos los derechos reservados.</p>
+    </footer>
