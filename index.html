@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PJSM - Pere Joan Sirvent Mestre</title>
-    <meta name="description" content="Página de Pere Joan Sirvent Mestre con información sobre sus relatos, poesías y novedades.">
-    <meta name="keywords" content="Pere Joan Sirvent Mestre, relatos, poesía, literatura, novedades">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
-            background-color: #f5e0b5;
+            background-color: #f5e0b5; /* Fondo general */
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
         header, footer {
-            background-color: #e2f0cb;
+            background-color: #e2f0cb; /* Fondo para header y footer */
             color: #333;
             text-align: center;
             padding: 20px;
@@ -26,8 +23,8 @@
         }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: #e2f0cb;
+            justify-content: space-around;
+            background-color: #e2f0cb; /* Fondo para el menú */
             padding: 10px 0;
             overflow-x: auto;
             white-space: nowrap;
@@ -42,7 +39,7 @@
             font-family: 'Raleway', sans-serif;
         }
         nav a:hover {
-            background-color: #f5e0b5;
+            background-color: #f5e0b5; /* Color de hover para links del menú */
         }
         .section {
             padding: 20px;
@@ -50,12 +47,21 @@
             max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            background-color: #fff; /* Fondo de cada sección */
             overflow: hidden;
             word-wrap: break-word;
         }
+        #poesia {
+            padding: 20px;
+            background-color: #f5e0b5;
+            border: 1px solid #e2f0cb;
+            border-radius: 8px;
+            font-style: italic;
+            text-align: center;
+        }
         .section h2 {
             font-family: 'Lora', serif;
+            margin-top: 0;
             color: #333;
         }
         .cta-button {
@@ -69,7 +75,6 @@
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s;
-            cursor: pointer;
         }
         .cta-button:hover {
             background-color: #f5e0b5;
@@ -84,7 +89,6 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 10px;
-            resize: vertical;
         }
         /* Ajustes de poema */
         .poem {
@@ -93,16 +97,27 @@
             margin: 0 auto;
             padding: 10px;
             font-style: italic;
+            line-height: 1.4; /* Ajusta el espacio entre líneas */
+        }
+        .poem br {
+            margin-bottom: 0; /* Elimina el margen adicional de los saltos de línea */
         }
         /* Responsivo para móviles */
         @media (max-width: 600px) {
+            header {
+                padding: 15px;
+            }
             nav {
                 flex-direction: column;
                 align-items: center;
             }
+            nav a {
+                margin: 5px 0;
+            }
             .section {
                 padding: 15px;
                 margin: 10px;
+                box-sizing: border-box;
             }
             .cta-button {
                 width: 100%;
@@ -125,7 +140,7 @@
         <a href="#relatos-cortos">Relatos Cortos</a>
         <a href="#poesia">Poesía</a>
         <a href="#libros">Libros</a>
-        <a href="#sugerencias">Sugerencias</a>
+        <a href="#sugerencias">Sugerencias de Películas y Libros</a>
         <a href="#redes">Redes</a>
     </nav>
 
@@ -155,25 +170,29 @@
     <section id="poesia" class="section">
         <h2>Poesía</h2>
         <div class="poem">
-            En la quietud, la ansiedad es un reloj sin manecillas,<br>
-            un latido hueco en la cueva de la mente,<br>
-            gira en espirales, un torbellino invisible<br>
-            que cose el aire con hilos de niebla.<br><br>
-            El pánico se viste de humo y sombras,<br>
-            con manos heladas sobre el pecho,<br>
-            es un viento que no cesa y arrastra<br>
-            piedras invisibles al borde de un abismo.<br><br>
-            El insomnio es un vigía incansable,<br>
-            ojos que nunca pestañean, fija la mirada<br>
-            en el rincón de los pensamientos<br>
-            donde el tiempo es solo un susurro.<br><br>
-            Mi mente es un bosque de caminos sin mapa,<br>
-            cada rama se enreda en sí misma,<br>
-            como si el silencio fuera laberinto y eco,<br>
-            como si las sombras fueran palabras sin voz.<br><br>
-            Y en esa maraña de días y noches rotas,<br>
-            mi diagnóstico es un nombre, una palabra sin cara,<br>
-            como un eco recién hallado en la memoria,<br>
+            En la quietud, la ansiedad es un reloj sin manecillas,
+            un latido hueco en la cueva de la mente,
+            gira en espirales, un torbellino invisible
+            que cose el aire con hilos de niebla.
+
+            El pánico se viste de humo y sombras,
+            con manos heladas sobre el pecho,
+            es un viento que no cesa y arrastra
+            piedras invisibles al borde de un abismo.
+
+            El insomnio es un vigía incansable,
+            ojos que nunca pestañean, fija la mirada
+            en el rincón de los pensamientos
+            donde el tiempo es solo un susurro.
+
+            Mi mente es un bosque de caminos sin mapa,
+            cada rama se enreda en sí misma,
+            como si el silencio fuera laberinto y eco,
+            como si las sombras fueran palabras sin voz.
+
+            Y en esa maraña de días y noches rotas,
+            mi diagnóstico es un nombre, una palabra sin cara,
+            como un eco recién hallado en la memoria,
             que es ahora brújula y ruta hacia lo incierto.
         </div>
     </section>
