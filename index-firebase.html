@@ -1,3 +1,6 @@
+No, el archivo combinado que te proporcioné no incluye los scripts necesarios para Firebase. Aquí tienes el archivo HTML completo con la configuración de Firebase incluida para que puedas interactuar con la base de datos Firestore. Este código unifica los elementos de ambos archivos que mencionaste y agrega las funciones de Firebase para manejar poemas, sugerencias, relatos cortos y comentarios.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,7 +83,6 @@
 
     <section id="sobre-mi" class="section active">
         <h2>Sobre mí</h2>
-        <img src="https://i.imgur.com/N8Pmh1f.png" alt="Ilustración Sobre mí" class="illustration">
         <p class="content-summary">Soy Pere Joan Sirvent Mestre, un apasionado por la creación de contenidos. Me encanta escribir relatos, poesía y explorar nuevos campos de la creatividad.</p>
     </section>
 
@@ -112,10 +114,15 @@
         <button onclick="agregarComentario('Comentario de ejemplo')">Agregar Comentario</button>
     </section>
 
-    <!-- Sección Donaciones -->
     <section id="donaciones" class="section">
         <h2>Donaciones</h2>
-        <p>Si te gusta mi contenido y deseas apoyarme, considera hacer una donación.</p>
+        <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
+        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="2QCSKPG24XSBE" />
+            <input type="image" src="https://pics.paypal.com/00/s/NzM2MWQwOGEtNmFkNC00MWMzLTk3ZmItODg4MjJhZTUwNzI0/file.JPG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+            <img alt="" border="0" src="https://www.paypal.com/es_ES/i/scr/pixel.gif" width="1" height="1" />
+        </form>
     </section>
 
     <script>
@@ -194,7 +201,7 @@
             }
         }
 
-        // Función para agregar un comentario (ejemplo adicional)
+        // Función para agregar un comentario
         async function agregarComentario(contenido) {
             try {
                 const docRef = await addDoc(collection(db, "comentarios"), {
@@ -209,3 +216,6 @@
     </script>
 </body>
 </html>
+```
+
+Este archivo incluye el código de ambos archivos originales y los scripts de Firebase necesarios para interactuar con Firestore.
