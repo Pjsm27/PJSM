@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: tu_usuario/tu_repositorio  # Cambia a tu usuario y repositorio
+  branch: main  # Cambia a la rama que estés usando en tu proyecto
+
+media_folder: "uploads"  # Carpeta donde se guardarán imágenes y archivos multimedia
+public_folder: "/uploads"
+
+collections:
+  - name: "sections"
+    label: "Secciones"
+    folder: "contenido"  # Carpeta para almacenar el contenido editable
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
