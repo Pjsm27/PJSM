@@ -1,7 +1,7 @@
 backend:
   name: github
-  repo: tu_usuario/tu_repositorio  # Cambia a tu usuario y repositorio
-  branch: main  # Cambia a la rama que estés usando en tu proyecto
+  repo: Pjsm27/pjsm  # Tu usuario y repositorio en GitHub
+  branch: main  # Cambia a la rama que estás usando en tu proyecto
 
 media_folder: "uploads"  # Carpeta donde se guardarán imágenes y archivos multimedia
 public_folder: "/uploads"
