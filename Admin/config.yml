@@ -1,15 +1,55 @@
 backend:
   name: github
-  repo: Pjsm27/pjsm  # Tu usuario y repositorio en GitHub
-  branch: main  # Cambia a la rama que estás usando en tu proyecto
+  repo: Pjsm27/pjsm  # Cambia con tu usuario y repositorio
+  branch: main  # Cambia con tu rama si es diferente
 
-media_folder: "uploads"  # Carpeta donde se guardarán imágenes y archivos multimedia
-public_folder: "/uploads"
+media_folder: "uploads"  # Carpeta para almacenar archivos multimedia (imágenes, etc.)
+public_folder: "/uploads"  # Ruta pública de los archivos multimedia
 
 collections:
-  - name: "sections"
-    label: "Secciones"
-    folder: "contenido"  # Carpeta para almacenar el contenido editable
+  - name: "sobre-mi"
+    label: "Sobre mí"
+    folder: "contenido/sobre-mi"  # Carpeta donde se guardará el contenido de esta sección
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "relatos-cortos"
+    label: "Relatos Cortos"
+    folder: "contenido/relatos-cortos"  # Carpeta donde se guardará el contenido de esta sección
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "poesia"
+    label: "Poesía"
+    folder: "contenido/poesia"  # Carpeta donde se guardará el contenido de esta sección
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "sugerencias"
+    label: "Sugerencias"
+    folder: "contenido/sugerencias"  # Carpeta donde se guardará el contenido de esta sección
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "comentarios"
+    label: "Comentarios"
+    folder: "contenido/comentarios"  # Carpeta donde se guardará el contenido de esta sección
+    create: true
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "donaciones"
+    label: "Donaciones"
+    folder: "contenido/donaciones"  # Carpeta donde se guardará el contenido de esta sección
     create: true
     fields:
       - { label: "Título", name: "title", widget: "string" }
