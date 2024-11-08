@@ -123,38 +123,86 @@
         </form>
     </section>
 
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
+   <script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        const selectedSection = document.getElementById(sectionId);
+        selectedSection.classList.add('active');
+    }
+</script>
+
+<!-- Scripts de Firebase -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyDeq5JoJ304k4fR8xpdsYzaVCv7PQWFzeQ",
+        authDomain: "pjsm-web.firebaseapp.com",
+        projectId: "pjsm-web",
+        storageBucket: "pjsm-web.firebasestorage.app",
+        messagingSenderId: "434479978130",
+        appId: "1:434479978130:web:bc657adc144c61e53fb84b",
+        measurementId: "G-YVFRJ0X46K"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    // Función de autenticación
+    function login() {
+        const email = prompt("Ingresa tu correo electrónico");
+        const password = prompt("Ingresa tu contraseña");
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Si el inicio de sesión es exitoso, habilitar funciones de edición
+                const user = userCredential.user;
+                console.log("Usuario autenticado:", user.email);
+                alert("Iniciaste sesión correctamente.");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error(errorCode, errorMessage);
+                alert("Error al iniciar sesión. Por favor, revisa tus credenciales.");
             });
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add('active');
+    }
+
+    // Función para cerrar sesión
+    function logout() {
+        signOut(auth)
+            .then(() => {
+                console.log("Has cerrado sesión.");
+                alert("Has cerrado sesión.");
+            })
+            .catch((error) => {
+                console.error("Error al cerrar sesión", error);
+            });
+    }
+
+    // Verifica si el usuario está autenticado
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // Usuario está autenticado, permitir escribir contenido
+            document.getElementById("login-btn").style.display = "none"; // Ocultar botón de login
+            document.getElementById("logout-btn").style.display = "inline"; // Mostrar botón de logout
+        } else {
+            // Usuario no autenticado, solo puede ver el contenido
+            document.getElementById("login-btn").style.display = "inline"; // Mostrar botón de login
+            document.getElementById("logout-btn").style.display = "none"; // Ocultar botón de logout
         }
-    </script>
+    });
 
-    <!-- Scripts de Firebase -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyDeq5JoJ304k4fR8xpdsYzaVCv7PQWFzeQ",
-            authDomain: "pjsm-web.firebaseapp.com",
-            projectId: "pjsm-web",
-            storageBucket: "pjsm-web.firebasestorage.app",
-            messagingSenderId: "434479978130",
-            appId: "1:434479978130:web:bc657adc144c61e53fb84b",
-            measurementId: "G-YVFRJ0X46K"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
-
-        async function agregarPoema(titulo, contenido) {
+    async function agregarPoema(titulo, contenido) {
+        if (auth.currentUser) {
             try {
                 const docRef = await addDoc(collection(db, "poemas"), {
                     titulo: titulo,
@@ -165,9 +213,13 @@
             } catch (e) {
                 console.error("Error al agregar el poema: ", e);
             }
+        } else {
+            alert("Debes iniciar sesión para agregar un poema.");
         }
+    }
 
-        async function agregarSugerencia(titulo, descripcion) {
+    async function agregarSugerencia(titulo, descripcion) {
+        if (auth.currentUser) {
             try {
                 const docRef = await addDoc(collection(db, "sugerencias"), {
                     titulo: titulo,
@@ -178,9 +230,13 @@
             } catch (e) {
                 console.error("Error al agregar la sugerencia: ", e);
             }
+        } else {
+            alert("Debes iniciar sesión para agregar una sugerencia.");
         }
+    }
 
-        async function agregarRelatoCorto(titulo, contenido) {
+    async function agregarRelatoCorto(titulo, contenido) {
+        if (auth.currentUser) {
             try {
                 const docRef = await addDoc(collection(db, "relatosCortos"), {
                     titulo: titulo,
@@ -191,9 +247,13 @@
             } catch (e) {
                 console.error("Error al agregar el relato corto: ", e);
             }
+        } else {
+            alert("Debes iniciar sesión para agregar un relato corto.");
         }
+    }
 
-        async function agregarComentario(contenido) {
+    async function agregarComentario(contenido) {
+        if (auth.currentUser) {
             try {
                 const docRef = await addDoc(collection(db, "comentarios"), {
                     contenido: contenido,
@@ -203,7 +263,13 @@
             } catch (e) {
                 console.error("Error al agregar el comentario: ", e);
             }
+        } else {
+            alert("Debes iniciar sesión para agregar un comentario.");
         }
-    </script>
-</body>
-</html>
+    }
+</script>
+
+<!-- Botones de login/logout -->
+<button id="login-btn" onclick="login()">Iniciar sesión</button>
+<button id="logout-btn" onclick="logout()" style="display: none;">Cerrar sesión</button>
+
