@@ -111,6 +111,7 @@
         <button onclick="agregarComentario('Comentario de ejemplo')">Agregar Comentario</button>
     </section>
 
+    <!-- Sección Donaciones -->
     <section id="donaciones" class="section">
         <h2>Donaciones</h2>
         <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
@@ -135,12 +136,10 @@
 
     <!-- Scripts de Firebase -->
     <script type="module">
-        // Importar las funciones necesarias del SDK de Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
         import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-        // Configuración de Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyDeq5JoJ304k4fR8xpdsYzaVCv7PQWFzeQ",
             authDomain: "pjsm-web.firebaseapp.com",
@@ -151,12 +150,10 @@
             measurementId: "G-YVFRJ0X46K"
         };
 
-        // Inicializar Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const db = getFirestore(app);
 
-        // Función para agregar un poema
         async function agregarPoema(titulo, contenido) {
             try {
                 const docRef = await addDoc(collection(db, "poemas"), {
@@ -170,7 +167,6 @@
             }
         }
 
-        // Función para agregar una sugerencia
         async function agregarSugerencia(titulo, descripcion) {
             try {
                 const docRef = await addDoc(collection(db, "sugerencias"), {
@@ -184,7 +180,6 @@
             }
         }
 
-        // Función para agregar un relato corto
         async function agregarRelatoCorto(titulo, contenido) {
             try {
                 const docRef = await addDoc(collection(db, "relatosCortos"), {
@@ -198,7 +193,6 @@
             }
         }
 
-        // Función para agregar un comentario
         async function agregarComentario(contenido) {
             try {
                 const docRef = await addDoc(collection(db, "comentarios"), {
