@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJSM - Pere Joan Sirvent Mestre</title>
+    <style>
+        /* Colores solicitados */
+        body {
+            background-color: #f5e0b5;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #4682B4;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            background-color: #74B49B;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+        .section h2 {
+            color: #74B49B;
+        }
+        .cta-button {
+            background-color: #A5D6A7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background-color: #74B49B;
+        }
+        .illustration {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .content-summary {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PJSM - Pere Joan Sirvent Mestre</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showSection('sobre-mi')">Sobre mí</a>
+        <a href="#" onclick="showSection('relatos-cortos')">Relatos Cortos</a>
+        <a href="#" onclick="showSection('poemas')">Poesía</a>
+        <a href="#" onclick="showSection('sugerencias')">Sugerencias</a>
+        <a href="#" onclick="showSection('comentarios')">Comentarios</a>
+        <a href="#" onclick="showSection('donaciones')">Donaciones</a>
+    </nav>
+
+    <section id="sobre-mi" class="section active">
+        <h2>Sobre mí</h2>
+        <p class="content-summary">Soy Pere Joan Sirvent Mestre, un apasionado por la creación de contenidos. Me encanta escribir relatos, poesía y explorar nuevos campos de la creatividad.</p>
+    </section>
+
+    <!-- Sección Relatos Cortos -->
+    <section id="relatos-cortos" class="section">
+        <h2>Relatos Cortos</h2>
+        <p>Aquí encontrarás una selección de mis relatos cortos. Cada uno de ellos refleja diferentes experiencias, emociones y estilos narrativos que espero disfrutes.</p>
+        <button onclick="agregarRelatoCorto('Título del Relato', 'Contenido del relato')">Agregar Relato Corto</button>
+    </section>
+
+    <!-- Sección Poesía -->
+    <section id="poemas" class="section">
+        <h2>Poesía</h2>
+        <p>En esta sección puedes leer mis poemas. A través de las palabras, intento expresar sentimientos y reflexiones profundas sobre la vida, el amor, la naturaleza, y mucho más.</p>
+        <button onclick="agregarPoema('Título del Poema', 'Contenido del poema')">Agregar Poema</button>
+    </section>
+
+    <!-- Sección Sugerencias de Películas y Series -->
+    <section id="sugerencias" class="section">
+        <h2>Sugerencias de Películas y Series</h2>
+        <p>Comparte tus sugerencias de películas y series que te han impactado o que recomendarías.</p>
+        <button onclick="agregarSugerencia('Título de la Sugerencia', 'Descripción de la sugerencia')">Agregar Sugerencia</button>
+    </section>
+
+    <!-- Sección Comentarios -->
+    <section id="comentarios" class="section">
+        <h2>Comentarios</h2>
+        <p>Déjame tus comentarios para que pueda mejorar y ofrecer mejores contenidos.</p>
+        <button onclick="agregarComentario('Comentario de ejemplo')">Agregar Comentario</button>
+    </section>
+
+    <!-- Sección Donaciones -->
+    <section id="donaciones" class="section">
+        <h2>Donaciones</h2>
+        <p>Si deseas apoyar este proyecto, puedes hacer una donación. Toda contribución será muy apreciada y ayudará a mantener y mejorar el contenido de esta página.</p>
+        <a href="https://www.paypal.com/donate?business=pjsm527@gmail.com" class="cta-button" target="_blank">Donar con PayPal</a>
+        <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="2QCSKPG24XSBE" />
+            <input type="image" src="https://pics.paypal.com/00/s/NzM2MWQwOGEtNmFkNC00MWMzLTk3ZmItODg4MjJhZTUwNzI0/file.JPG" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+            <img alt="" border="0" src="https://www.paypal.com/es_ES/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+    </section>
+
+   <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+    <!-- Scripts de Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyA4IeZRSoMch9daIjDRsM0dEgkxekUWOwQ",
+  authDomain: "pjsm-web-2e505.firebaseapp.com",
+  projectId: "pjsm-web-2e505",
+  storageBucket: "pjsm-web-2e505.firebasestorage.app",
+  messagingSenderId: "848054336153",
+  appId: "1:848054336153:web:58d09a7249497121bd5608",
+  measurementId: "G-KYZF25LNKL"  
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Función de autenticación
+        function login() {
+            const email = prompt("Ingresa tu correo electrónico");
+            const password = prompt("Ingresa tu contraseña");
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("Usuario autenticado:", user.email);
+                    alert("Iniciaste sesión correctamente.");
+                })
+                .catch((error) => {
+                    console.error("Error al iniciar sesión:", error);
+                    alert("Error al iniciar sesión. Revisa tus credenciales.");
+                });
+        }
+
+        function logout() {
+            signOut(auth)
+                .then(() => {
+                    console.log("Has cerrado sesión.");
+                    alert("Has cerrado sesión.");
+                })
+                .catch((error) => {
+                    console.error("Error al cerrar sesión:", error);
+                });
+        }
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                document.getElementById("login-btn").style.display = "none";
+                document.getElementById("logout-btn").style.display = "inline";
+            } else {
+                document.getElementById("login-btn").style.display = "inline";
+                document.getElementById("logout-btn").style.display = "none";
+            }
+        });
+
+        async function agregarPoema(titulo, contenido) {
+            if (auth.currentUser) {
+                try {
+                    const docRef = await addDoc(collection(db, "poemas"), {
+                        titulo: titulo,
+                        contenido: contenido,
+                        fecha: new Date()
+                    });
+                    console.log("Poema agregado con ID:", docRef.id);
+                } catch (e) {
+                    console.error("Error al agregar el poema:", e);
+                }
+            } else {
+                alert("Debes iniciar sesión para agregar un poema.");
+            }
+        }
+
+        async function agregarSugerencia(titulo, descripcion) {
+            if (auth.currentUser) {
+                try {
+                    const docRef = await addDoc(collection(db, "sugerencias"), {
+                        titulo: titulo,
+                        descripcion: descripcion,
+                        fecha: new Date()
+                    });
+                    console.log("Sugerencia agregada con ID:", docRef.id);
+                } catch (e) {
+                    console.error("Error al agregar la sugerencia:", e);
+                }
+            } else {
+                alert("Debes iniciar sesión para agregar una sugerencia.");
+            }
+        }
+
+        async function agregarRelatoCorto(titulo, contenido) {
+            if (auth.currentUser) {
+                try {
+                    const docRef = await addDoc(collection(db, "relatosCortos"), {
+                        titulo: titulo,
+                        contenido: contenido,
+                        fecha: new Date
