@@ -123,6 +123,10 @@
         </form>
     </section>
 
+    <!-- Botones de inicio y cierre de sesión -->
+    <button id="login-btn" onclick="login()">Iniciar sesión</button>
+    <button id="logout-btn" style="display:none;" onclick="logout()">Cerrar sesión</button>
+
     <!-- Scripts de Firebase -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
@@ -217,10 +221,48 @@
             }
         }
 
+        async function agregarComentario(comentario) {
+            if (auth.currentUser) {
+                try {
+                    const docRef = await addDoc(collection(db, "comentarios"), {
+                        comentario: comentario,
+                        fecha: new Date()
+                    });
+                    console.log("Comentario agregado con ID:", docRef.id);
+                } catch (e) {
+                    console.error("Error al agregar el comentario:", e);
+                }
+            } else {
+                alert("Debes iniciar sesión para agregar un comentario.");
+            }
+        }
+
+        async function agregarRelatoCorto(titulo, contenido) {
+            if (auth.currentUser) {
+                try {
+                    const docRef = await addDoc(collection(db, "relatos_cortos"), {
+                        titulo: titulo,
+                        contenido: contenido,
+                        fecha: new Date()
+                    });
+                    console.log("Relato corto agregado con ID:", docRef.id);
+                } catch (e) {
+                    console.error("Error al agregar el relato corto:", e);
+                }
+            } else {
+                alert("Debes iniciar sesión para agregar un relato corto.");
+            }
+        }
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
         }
     </script>
 </body>
