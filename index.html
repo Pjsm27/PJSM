@@ -123,16 +123,6 @@
         </form>
     </section>
 
-   <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
-
     <!-- Scripts de Firebase -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
@@ -142,12 +132,12 @@
         
         const firebaseConfig = {
           apiKey: "AIzaSyA4IeZRSoMch9daIjDRsM0dEgkxekUWOwQ",
-  authDomain: "pjsm-web-2e505.firebaseapp.com",
-  projectId: "pjsm-web-2e505",
-  storageBucket: "pjsm-web-2e505.firebasestorage.app",
-  messagingSenderId: "848054336153",
-  appId: "1:848054336153:web:58d09a7249497121bd5608",
-  measurementId: "G-KYZF25LNKL"  
+          authDomain: "pjsm-web-2e505.firebaseapp.com",
+          projectId: "pjsm-web-2e505",
+          storageBucket: "pjsm-web-2e505.firebasestorage.app",
+          messagingSenderId: "848054336153",
+          appId: "1:848054336153:web:58d09a7249497121bd5608",
+          measurementId: "G-KYZF25LNKL"  
         };
 
         const app = initializeApp(firebaseConfig);
@@ -227,10 +217,11 @@
             }
         }
 
-        async function agregarRelatoCorto(titulo, contenido) {
-            if (auth.currentUser) {
-                try {
-                    const docRef = await addDoc(collection(db, "relatosCortos"), {
-                        titulo: titulo,
-                        contenido: contenido,
-                        fecha: new Date
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
