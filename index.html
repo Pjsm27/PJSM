@@ -33,7 +33,7 @@
         .section {
             display: none;
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 20px; /* Espacio entre las secciones */
         }
         .section.active {
             display: block;
@@ -79,36 +79,50 @@
     </nav>
 
     <section id="sobre-mi" class="section active">
-        <h2>Sobre mí</h2>
-        <p class="content-summary">Soy Pere Joan Sirvent Mestre, un apasionado por la creación de contenidos. Me encanta escribir relatos, poesía y explorar nuevos campos de la creatividad.</p>
-    </section>
+    <h2>Sobre mí</h2>
+    <img src="https://i.imgur.com/N8Pmh1f.png" alt="Ilustración Sobre mí" class="illustration">
+    <p class="content-summary">Soy Pere Joan Sirvent Mestre, un apasionado por la creación de contenidos. Me encanta escribir relatos, poesía y explorar nuevos campos de la creatividad.</p>
+</section>
+
 
     <!-- Sección Relatos Cortos -->
     <section id="relatos-cortos" class="section">
         <h2>Relatos Cortos</h2>
         <p>Aquí encontrarás una selección de mis relatos cortos. Cada uno de ellos refleja diferentes experiencias, emociones y estilos narrativos que espero disfrutes.</p>
-        <button onclick="agregarRelatoCorto('Título del Relato', 'Contenido del relato')">Agregar Relato Corto</button>
+        <!-- Agregar relatos cortos aquí -->
     </section>
 
     <!-- Sección Poesía -->
     <section id="poemas" class="section">
         <h2>Poesía</h2>
         <p>En esta sección puedes leer mis poemas. A través de las palabras, intento expresar sentimientos y reflexiones profundas sobre la vida, el amor, la naturaleza, y mucho más.</p>
-        <button onclick="agregarPoema('Título del Poema', 'Contenido del poema')">Agregar Poema</button>
+        <p><strong>Sombras y Silencios</strong></p>
+        <p class="poema">En la quietud, la ansiedad es un reloj sin manecillas,<br> un latido hueco en la cueva de la mente,<br> gira en espirales, un torbellino invisible<br> que cose el aire con hilos de niebla.</p>
+        <p class="poema">El pánico se viste de humo y sombras,<br> con manos heladas sobre el pecho,<br> es un viento que no cesa y arrastra<br> piedras invisibles al borde de un abismo.</p>
+        <p class="poema">El insomnio es un vigía incansable,<br> ojos que nunca pestañean, fija la mirada<br> en el rincón de los pensamientos<br> donde el tiempo es solo un susurro.</p>
+        <p class="poema">Mi mente es un bosque de caminos sin mapa,<br> cada rama se enreda en sí misma,<br> como si el silencio fuera laberinto y eco,<br> como si las sombras fueran palabras sin voz.</p>
+        <p class="poema">Y en esa maraña de días y noches rotas,<br> mi diagnóstico es un nombre, una palabra sin cara,<br> como un eco recién hallado en la memoria,<br> que es ahora brújula y ruta hacia lo incierto.</p>
     </section>
 
     <!-- Sección Sugerencias de Películas y Series -->
     <section id="sugerencias" class="section">
         <h2>Sugerencias de Películas y Series</h2>
-        <p>Comparte tus sugerencias de películas y series que te han impactado o que recomendarías.</p>
-        <button onclick="agregarSugerencia('Título de la Sugerencia', 'Descripción de la sugerencia')">Agregar Sugerencia</button>
+        <div class="sugerencia-subseccion">
+            <h3>Películas</h3>
+            <p><strong>Coherence:</strong> Un grupo de amigos se reúne para una cena, pero lo que comienza como una noche tranquila se convierte en un evento extraño cuando comienzan a suceder sucesos inexplicables. La trama gira en torno a una serie de eventos desconcertantes que desafían las leyes de la realidad, llevando a los personajes a enfrentarse a lo desconocido. La película te mantiene en suspense, jugando con la percepción y la tensión psicológica, sin revelar demasiado de una forma que pueda arruinar la experiencia.</p>
+        </div>
+        <div class="sugerencia-subseccion">
+            <h3>Series</h3>
+            <p><strong>Fringe:</strong> "Fringe" es una serie que combina elementos de acción, drama y ciencia ficción de manera impresionante. A lo largo de la serie, los personajes se desarrollan profundamente, enfrentándose a misterios y situaciones complejas que involucran fenómenos paranormales y alteraciones de la realidad. Aunque la serie no está terminada, ofrece una mezcla intrigante de investigación científica y misterio, con giros inesperados que mantienen al espectador enganchado en cada episodio.</p>
+        </div>
     </section>
 
     <!-- Sección Comentarios -->
     <section id="comentarios" class="section">
         <h2>Comentarios</h2>
-        <p>Déjame tus comentarios para que pueda mejorar y ofrecer mejores contenidos.</p>
-        <button onclick="agregarComentario('Comentario de ejemplo')">Agregar Comentario</button>
+        <p>Deja tu comentario sobre la página, relatos, poesía o cualquier sugerencia.</p>
+        <textarea placeholder="Escribe tu comentario aquí"></textarea>
+        <button class="cta-button">Enviar comentario</button>
     </section>
 
     <!-- Sección Donaciones -->
@@ -123,99 +137,23 @@
         </form>
     </section>
 
-    <!-- Botones de inicio y cierre de sesión -->
-    <button id="login-btn" onclick="login()">Iniciar sesión</button>
-    <button id="logout-btn" style="display:none;" onclick="logout()">Cerrar sesión</button>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 PJSM - Pere Joan Sirvent Mestre. Todos los derechos reservados.</p>
+        <p>Diseñado con cariño. ¡Gracias por visitar!</p>
+    </footer>
 
-    <!-- Scripts de Firebase -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-        
-        const firebaseConfig = {
-          apiKey: "AIzaSyA4IeZRSoMch9daIjDRsM0dEgkxekUWOwQ",
-          authDomain: "pjsm-web-2e505.firebaseapp.com",
-          projectId: "pjsm-web-2e505",
-          storageBucket: "pjsm-web-2e505.firebasestorage.app",
-          messagingSenderId: "848054336153",
-          appId: "1:848054336153:web:58d09a7249497121bd5608",
-          measurementId: "G-KYZF25LNKL"  
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        // Función de autenticación
-        function login() {
-            const email = prompt("Ingresa tu correo electrónico:");
-            const password = prompt("Ingresa tu contraseña:");
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    console.log("Usuario autenticado:", user.email);
-                    alert("Iniciaste sesión correctamente.");
-                })
-                .catch((error) => {
-                    console.error("Error al iniciar sesión:", error);
-                    alert("Error al iniciar sesión. Revisa tus credenciales.");
-                });
-        }
-
-        function logout() {
-            signOut(auth)
-                .then(() => {
-                    console.log("Has cerrado sesión.");
-                    alert("Has cerrado sesión.");
-                })
-                .catch((error) => {
-                    console.error("Error al cerrar sesión:", error);
-                });
-        }
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                alert("Usuario autenticado: " + user.email);
-                document.getElementById("login-btn").style.display = "none";
-                document.getElementById("logout-btn").style.display = "inline";
-            } else {
-                alert("No hay usuario autenticado.");
-                document.getElementById("login-btn").style.display = "inline";
-                document.getElementById("logout-btn").style.display = "none";
-            }
-        });
-
-        async function agregarPoema(titulo, contenido) {
-            if (auth.currentUser) {
-                try {
-                    const docRef = await addDoc(collection(db, "poemas"), {
-                        titulo: titulo,
-                        contenido: contenido,
-                        fecha: new Date()
-                    });
-                    console.log("Poema agregado con ID:", docRef.id);
-                } catch (e) {
-                    console.error("Error al agregar el poema:", e);
-                }
-            } else {
-                alert("Debes estar autenticado para agregar un poema.");
-            }
-        }
-
-        // Función para mostrar secciones
+    <script>
         function showSection(sectionId) {
+            // Ocultar todas las secciones
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
+                section.classList.remove('active');
             });
+            
+            // Mostrar la sección seleccionada
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
         }
     </script>
 </body>
